@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+}
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: #020617; 
+    color: #f8fafc;
+    overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* --- Background Animation --- */
+#canvas-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- Custom Circular Cursor --- */
+#cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out, background 0.3s ease;
+}
+
+
+#cursor-blur {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover effect for cursor */
+.hover-link:hover ~ #cursor {
+    transform: scale(2.5);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+/* Project Card Hover Animation */
+.group:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-10px);
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.group {
+    transition: all 0.3s ease;
+}   
+
+.border-emerald-500:hover {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+iframe {
+    background: #0f172a; /* Matches your dark theme while loading */
+    filter: grayscale(10%) contrast(110%); /* Subtle blend with your theme */
+}
