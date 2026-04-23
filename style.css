@@ -7,10 +7,11 @@
 
 body { 
     font-family: 'Plus Jakarta Sans', sans-serif; 
-    background-color: #020617; 
+    background-color: #0a133a; 
     color: #f8fafc;
     overflow-x: hidden;
     cursor: none; /* Hide default cursor */
+    
 }
 
 /* --- Background Animation --- */
